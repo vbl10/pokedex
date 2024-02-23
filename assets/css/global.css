@@ -1,23 +1,24 @@
-.roboto-thin {
-  font-family: "Roboto", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+* {
+  font-family: "Roboto", "sans-serif";
 }
 
-.roboto-light {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+.content {
+  padding: 1rem; /* rem: unidade relativa à fonte de texto tamanho médio */
 }
 
-.roboto-medium {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+ol.pokemons {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0;
+  margin: 0;
 }
 
-.roboto-bold {
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  font-style: normal;
+ol.pokemons li {
+  color: white;
+  background-color: #14a06f;
+  height: 85px;
+  border-radius: 1rem;
+  padding: 1.5rem 1rem;
+  margin: 0.5rem;
 }
