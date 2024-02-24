@@ -3,11 +3,11 @@
   box-sizing: border-box; /* importante */
 }
 
-.content {
+.conteudo {
   padding: 1rem; /* rem: unidade relativa à fonte de texto tamanho médio */
 }
 
-ol.pokemons {
+.pokemons {
   list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -15,7 +15,7 @@ ol.pokemons {
   margin: 0;
 }
 
-ol.pokemons li {
+.pokemon {
   color: white;
   background-color: #14a06f;
   border-radius: 1rem;
@@ -25,8 +25,41 @@ ol.pokemons li {
   flex-direction: column;
 }
 
-ol.pokemons li img {
-  align-self: flex-end;
+.pokemon .numero {
+  color: black;
+  opacity: 0.5;
+  text-align: right;
+  font-size: small;
+}
+
+.pokemon .nome {
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.pokemon .detalhes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pokemon .tipos {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pokemon .tipos .tipo {
+  background-color: #118059;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  margin: 0.25rem 0;
+  font-size: small;
+}
+
+.pokemon .detalhes img {
   max-width: 100%;
-  height: 100px;
+  height: 90px;
 }
