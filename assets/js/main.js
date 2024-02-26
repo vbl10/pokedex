@@ -3,11 +3,11 @@ const limit = 10;
 const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 const pokemonsListElement = document.getElementById("pokemonsList");
 
-function pokemonJsonToHtml(pokemonJson) {
+function pokemonStructToHtml(pokemonStruct) {
   return `
     <li class="pokemon">
       <span class="numero">#001</span>
-      <span class="nome">${pokemonJson.name}</span>
+      <span class="nome">${pokemonStruct.name}</span>
       <div class="detalhes">
         <ol class="tipos">
           <li class="tipo">grama</li>
@@ -15,7 +15,7 @@ function pokemonJsonToHtml(pokemonJson) {
         </ol>
         <img
           src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-          alt="${pokemonJson.name}"
+          alt="${pokemonStruct.name}"
           srcset=""
         />
       </div>
@@ -35,10 +35,8 @@ progressivamente.
 pokeApi
   .getPokemons()
   .then((pokemonsList = []) => {
-    let htmlList = "";
-    for (let i = 0; i < pokemonsList.length; i++) {
-      htmlList += pokemonJsonToHtml(pokemonsList[i]);
-    }
-    pokemonsListElement.innerHTML += htmlList;
+    pokemonsListElement.innerHTML += pokemonsList
+      .map(pokemonStructToHtml)
+      .join("");
   })
   .catch((error) => console.log(error));
