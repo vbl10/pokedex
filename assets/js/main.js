@@ -32,12 +32,13 @@ template é o retorno da função lambda passada como argumento. Dessa forma, é
 concatenar múltiplas chamadas à função membro then() e processar os resultados 
 progressivamente.
 */
-fetch(url)
-  .then((response) => response.json())
-  .then((json) => {
-    let pokemonsList = json.results;
+pokeApi
+  .getPokemons()
+  .then((pokemonsList = []) => {
+    let htmlList = "";
     for (let i = 0; i < pokemonsList.length; i++) {
-      pokemonsListElement.innerHTML += pokemonJsonToHtml(pokemonsList[i]);
+      htmlList += pokemonJsonToHtml(pokemonsList[i]);
     }
+    pokemonsListElement.innerHTML += htmlList;
   })
   .catch((error) => console.log(error));
