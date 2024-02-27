@@ -8,7 +8,6 @@
 
 .pokemon {
   color: white;
-  background-color: #14a06f;
   border-radius: 1rem;
   padding: 1.5rem 1rem;
   margin: 0.5rem;
@@ -42,12 +41,13 @@
 }
 
 .pokemon .tipos .tipo {
-  background-color: #118059;
+  filter: brightness(1.2);
   color: white;
   padding: 0.5rem;
   border-radius: 1rem;
   margin: 0.25rem 0;
   font-size: small;
+  text-align: center;
 }
 
 .pokemon .detalhes img {

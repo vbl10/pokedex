@@ -3,14 +3,14 @@ const pokemonsListElement = document.getElementById("pokemonsList");
 function makeHtmlPokemonTypeList(pokemonModel) {
   return pokemonModel.types
     .map((type) => {
-      return `<li class="tipo">${type}</li>`;
+      return `<li class="tipo ${type}">${type}</li>`;
     })
     .join("");
 }
 
 function makeHtmlPokemonCard(pokemonModel) {
   return `
-    <li class="pokemon">
+    <li class="pokemon ${pokemonModel.mainType}">
       <span class="numero">#${pokemonModel.number}</span>
       <span class="nome">${pokemonModel.name}</span>
       <div class="detalhes">
@@ -37,7 +37,7 @@ concatenar múltiplas chamadas à função membro then() e processar os resultad
 progressivamente.
 */
 pokeApi
-  .getPokemons()
+  .getPokemons(0, 20)
   .then((pokemonsList = []) => {
     pokemonsListElement.innerHTML += pokemonsList
       .map(makeHtmlPokemonCard)
