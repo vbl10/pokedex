@@ -3,19 +3,26 @@ const limit = 10;
 const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 const pokemonsListElement = document.getElementById("pokemonsList");
 
-function pokemonStructToHtml(pokemonStruct) {
+function makeHtmlPokemonTypeList(pokemonStruct) {
+  return pokemonStruct.types.map((elmnt) => {
+    return `<li class="tipo">${elmnt.type.name}</li>`;
+  }).join("");
+}
+
+function makeHtmlPokemonCard(pokemonStruct) {
+  let name = pokemonStruct.name;
+  name = name[0].toUpperCase() + name.slice(1);
   return `
     <li class="pokemon">
-      <span class="numero">#001</span>
-      <span class="nome">${pokemonStruct.name}</span>
+      <span class="numero">#${pokemonStruct.order}</span>
+      <span class="nome">${name}</span>
       <div class="detalhes">
         <ol class="tipos">
-          <li class="tipo">grama</li>
-          <li class="tipo">poison</li>
+          ${makeHtmlPokemonTypeList(pokemonStruct)}
         </ol>
         <img
-          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
-          alt="${pokemonStruct.name}"
+          src="${pokemonStruct.sprites.other.dream_world.front_default}"
+          alt="${name}"
           srcset=""
         />
       </div>
@@ -36,7 +43,7 @@ pokeApi
   .getPokemons()
   .then((pokemonsList = []) => {
     pokemonsListElement.innerHTML += pokemonsList
-      .map(pokemonStructToHtml)
+      .map(makeHtmlPokemonCard)
       .join("");
   })
   .catch((error) => console.log(error));
