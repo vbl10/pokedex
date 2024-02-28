@@ -1,6 +1,6 @@
 class PokemonModel {
   constructor(pokeApiModel) {
-    this.number = pokeApiModel.order;
+    this.number = pokeApiModel.id;
     this.name =
       pokeApiModel.name.slice(0, 1).toUpperCase() + pokeApiModel.name.slice(1);
     this.types = pokeApiModel.types.map((elmnt) => elmnt.type.name);
@@ -14,6 +14,12 @@ class PokemonModel {
   sprite;
 }
 class pokeApi {
+  static pokemonCount() {
+    return fetch("https://pokeapi.co/api/v2/pokemon?limit=1")
+      .then((response) => response.json())
+      .then((result) => result.count)
+      .catch((error) => console.log(error));
+  }
   static getPokemons(offset = 0, limit = 10) {
     const getPokemonDetailsPromise = function (elmnt) {
       return fetch(elmnt.url)

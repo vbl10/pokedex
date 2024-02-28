@@ -51,8 +51,36 @@
 }
 
 .pokemon .detalhes img {
-  max-width: 100%;
+  max-width: 50%;
   height: 90px;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+}
+
+.pagination button {
+  margin: 0.5rem;
+  width: 5rem;
+  background-color: rgb(143, 117, 216);
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  padding: 0.5rem;
+}
+
+.pagination button:hover {
+  background-color: rgb(96, 79, 145);
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background-color: #ccc;
 }
 
 @media screen and (min-width: 380px) {
