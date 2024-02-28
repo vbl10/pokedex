@@ -16,9 +16,8 @@ body {
 @media screen and (min-width: 992px) {
   .conteudo {
     max-width: 992px;
-    margin: 0 auto; /* espaçamento dividido igualmente entre esquerda e direita */
     height: auto;
-    margin: 1rem auto;
+    margin: 1rem auto; /* espaçamento dividido igualmente entre esquerda e direita */
     border-radius: 1rem;
   }
 }

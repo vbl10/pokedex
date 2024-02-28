@@ -1,0 +1,109 @@
+body {
+  background-color: white;
+}
+
+.conteudo {
+  background-color: rgb(53, 180, 75);
+  display: flex;
+  flex-direction: column;
+  height: 50vh;
+}
+
+.top-bar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.top-bar h1 {
+  margin: 0;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.top-bar .numero {
+  justify-self: end;
+  text-align: right;
+}
+
+.top-bar ol {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  column-gap: 0.5rem;
+}
+
+.top-bar li {
+  filter: brightness(1.2);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 1rem;
+  margin: 0;
+  font-size: medium;
+  text-align: center;
+}
+
+#pokemon-sprite-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#pokemon-sprite {
+  justify-self: center;
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.div1 {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 50vh;
+}
+
+.info-dock {
+  background-color: white;
+  width: 100%;
+  height: calc(100% + 2rem);
+  position: absolute;
+  border-radius: 2rem;
+  top: -2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-table {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: 100%;
+  row-gap: 0.5rem;
+  padding: 1rem;
+  margin: auto;
+}
+
+.table-prop {
+  color: grey;
+}
+
+#table-prop-abilities {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  row-gap: 0.2rem;
+  column-gap: 0.4rem;
+}
+
+@media screen and (min-width: 992px) {
+  .div1 {
+    max-width: 992px;
+    margin: 0 auto;
+  }
+}

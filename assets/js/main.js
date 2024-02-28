@@ -17,20 +17,20 @@ function makeHtmlPokemonTypeList(pokemonModel) {
 function makeHtmlPokemonCard(pokemonModel) {
   return `
   <li class="pokemon ${pokemonModel.mainType}">
-      <span class="numero">#${pokemonModel.number}</span>
-      <span class="nome">${pokemonModel.name}</span>
-      <div class="detalhes">
+    <span class="numero">#${pokemonModel.number}</span>
+    <span class="nome">${pokemonModel.name}</span>
+    <div class="detalhes">
       <ol class="tipos">
-      ${makeHtmlPokemonTypeList(pokemonModel)}
-        </ol>
-        <img
-          src="${pokemonModel.sprite}"
-          alt="${pokemonModel.name}"
-          srcset=""
-        />
-        </div>
-        </li>
-        `;
+        ${makeHtmlPokemonTypeList(pokemonModel)}
+      </ol>
+      <img
+        src="${pokemonModel.sprite}"
+        alt="${pokemonModel.name}"
+        srcset=""
+      />
+    </div>
+  </li>
+  `;
 }
 
 function loadPokemons() {
@@ -79,4 +79,3 @@ btnPrevPage.addEventListener("click", prevPage);
 btnNextPage.addEventListener("click", nextPage);
 
 loadPokemons();
-
