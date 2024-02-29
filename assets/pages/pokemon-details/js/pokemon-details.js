@@ -2,8 +2,6 @@ const urlParams = new URLSearchParams(window.location.search);
 const pokemonId = urlParams.get("id");
 const page = document.getElementById("page");
 
-function makeHtmlPokemonTypeList(results) {}
-
 fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
   .then((response) => response.json())
   .then((pokeApiModel) => {
