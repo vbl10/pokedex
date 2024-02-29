@@ -3,7 +3,6 @@ body {
 }
 
 .conteudo {
-  background-color: rgb(53, 180, 75);
   display: flex;
   flex-direction: column;
   height: 50vh;
