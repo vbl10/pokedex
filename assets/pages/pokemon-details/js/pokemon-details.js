@@ -34,7 +34,7 @@ fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
             <span class="table-prop">Habilidades</span
             ><span>${pokemon.abilities.join(", ")}</span>
             <span class="table-prop">Experiência base</span><span>${pokemon.base_xp}</span>
-            <span class="table-prop">HP</span><span>${pokemon.base_xp}</span>
+            <span class="table-prop">HP</span><span>${pokemon.hp}</span>
             <span class="table-prop">Ataque</span><span>${pokemon.attack}</span>
             <span class="table-prop">Defesa</span><span>${pokemon.defense}</span>
             <span class="table-prop">Ataque especial</span><span>${pokemon.special_attack}</span>
